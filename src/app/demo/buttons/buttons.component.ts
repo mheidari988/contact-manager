@@ -3,13 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-buttons',
   template: `
-    <p>
-      buttons works!
-    </p>
+    <button mat-button><mat-icon>face</mat-icon>Click me!</button>
+    <mat-checkbox>Check me!</mat-checkbox>
   `,
-  styles: [
-  ]
+  styles: [],
 })
-export class ButtonsComponent {
-
-}
+export class ButtonsComponent {}
