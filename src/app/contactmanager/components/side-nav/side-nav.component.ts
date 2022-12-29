@@ -1,5 +1,8 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { Observable } from 'rxjs';
+import { User } from '../../models/user';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 
@@ -10,7 +13,11 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 })
 export class SideNavComponent implements OnInit {
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  _users?: Observable<User[]>
+
+  constructor(private breakpointObserver: BreakpointObserver, private userService: UserService) {
+
+  }
 
   ngOnInit(): void {
     this.breakpointObserver
@@ -19,6 +26,13 @@ export class SideNavComponent implements OnInit {
       .subscribe((state: BreakpointState) => {
         this.isSmallScreen = state.matches;
       });
+
+    this._users = this.userService.users;
+    this.userService.getAll();
+
+    this._users.subscribe(data => {
+      console.log(data);
+    });
   }
 
   isSmallScreen: boolean = false;

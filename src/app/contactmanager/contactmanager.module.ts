@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { UserService } from './services/user.service';
 
 import { ContactmanagerAppComponent } from './contactmanager-app.component';
 
@@ -33,5 +34,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
   ],
+  providers: [
+    UserService
+  ]
 })
 export class ContactmanagerModule { }
