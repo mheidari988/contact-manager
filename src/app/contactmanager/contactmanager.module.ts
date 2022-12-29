@@ -25,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactmanagerAppComponent, SideNavComponent, ToolbarComponent],
+  declarations: [ContactmanagerAppComponent, SideNavComponent, ToolbarComponent, MainContentComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
