@@ -8,8 +8,13 @@
     <mat-toolbar color="primary"> Contact </mat-toolbar>
 
     <mat-nav-list>
-      <mat-list-item *ngFor="let user of _users | async">
-        <a matListItemTitle href="#">{{ user.name }}</a>
+      <mat-list-item
+        *ngFor="let user of _users | async"
+        [routerLink]="[user.id]"
+      >
+        <a matListItemTitle>
+          <mat-icon svgIcon="{{ user.avatar }}"></mat-icon> {{ user.name }}
+        </a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>

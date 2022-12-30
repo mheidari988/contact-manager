@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contactmanager-app',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
   `,
   styles: [],
 })
-export class ContactmanagerAppComponent { }
+export class ContactmanagerAppComponent {
+
+  constructor(iconRegistery: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistery.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('assets/avatars.svg'));
+  }
+}
