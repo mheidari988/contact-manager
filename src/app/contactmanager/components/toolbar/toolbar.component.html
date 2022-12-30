@@ -1,7 +1,19 @@
 <mat-toolbar color="primary">
-  <button class="sidenav-toggle" type="button" mat-button (click)="toggleSideNav.emit()">
+  <button
+    mat-icon-button
+    class="example-icon sidenav-toggle"
+    (click)="toggleSideNav.emit()"
+    aria-label="Example icon-button with menu icon"
+  >
     <mat-icon>menu</mat-icon>
   </button>
-
   <span>Contact Manager</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
 </mat-toolbar>

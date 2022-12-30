@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactmanagerAppComponent, SideNavComponent, ToolbarComponent, MainContentComponent],
+  declarations: [ContactmanagerAppComponent, SideNavComponent, ToolbarComponent, MainContentComponent, NotesComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
